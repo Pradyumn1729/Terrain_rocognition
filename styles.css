@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  background-color: rgb(61, 156, 190);
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transform-style: preserve-3d;
+  z-index: -1;
+  
+}
+
+.background {
+  transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.title {
+  font-size: 7rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial Black', Arial, sans-serif;
+  letter-spacing: 2px;
+  opacity: 0; /* Start with the text hidden */
+  animation: fadeIn 1.5s ease-in-out forwards; /* Apply the animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with the text hidden */
+  }
+  to {
+    opacity: 1; /* Fade the text in */
+  }
+}
+
+
+section {
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  z-index: 1;
+}
+
+#section-form {
+  /* background: radial-gradient(#8B4513 1px, transparent 1px),
+              radial-gradient(#8B4513 1px, #D2B48C 1px); */
+  background-position: 0 0, 25px 25px;
+  height : 50%;
+  background-size: 50px 50px;
+  background-color: white;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: pattern.; */
+}
+
+#input-container {
+  /* background: radial-gradient(#A0522D 1px, transparent 1px),
+              radial-gradient(#A0522D 1px, #F5DEB3 1px); */
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  /* background-color: rgb(151, 240, 233); */
+  background: linear-gradient(135deg, #2ccabd, #73d498);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+#imageInput,
+#uploadButton {
+  margin: 1rem 0;
+}
+
+#uploadButton {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#uploadButton:hover {
+  background-color: #555;
+}
+
+.button-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#imageInput:hover {
+  border-color: #555;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  border: 4px dashed #fff;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+form p {
+  margin: 0;
+  color: #333;
+}
+
+form input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+form button {
+  margin-top: 20px;
+  color: #fff;
+  background: #16a085;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+form button:hover {
+  background: #149174;
+  color: #0C5645;
+}
+
+form button:active {
+  border: 0;
+}
+

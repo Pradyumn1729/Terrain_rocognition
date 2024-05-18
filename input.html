@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrain Recognition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <img src="imgs/Mountain.png" class="background">
+      <img src="imgs/Trees.png" class="foreground">
+      <h1 class="title">Welcome!</h1>
+    </header>
+    <section id="section-form">
+      <div id="input-container">
+        <form action="/trial" method="POST" enctype="multipart/form-data">
+          <input type="file" id="imageInput" name="inpimage" accept="image/*"><br>
+          <p>Drag your files here or click in this area.</p>
+          <button type="submit" id="uploadButton">Upload</button>
+        </form>
+        <img id="previewImage" src="" alt="">
+      </div>
+    </section>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="myJs.js"></script>
+</body>
+</html>
