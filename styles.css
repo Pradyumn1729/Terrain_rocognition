@@ -9,9 +9,15 @@ html {
 
 .wrapper {
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll; /* Changed from auto to scroll */
   overflow-x: hidden;
   perspective: 10px;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }
 
 header {
@@ -22,7 +28,6 @@ header {
   height: 100vh;
   transform-style: preserve-3d;
   z-index: -1;
-  
 }
 
 .background {
@@ -49,7 +54,7 @@ header {
   font-family: 'Arial Black', Arial, sans-serif;
   letter-spacing: 2px;
   opacity: 0; /* Start with the text hidden */
-  animation: fadeIn 1.5s ease-in-out forwards; /* Apply the animation */
+  animation: fadeIn 2.5s ease-in-out forwards; /* Apply the animation */
 }
 
 @keyframes fadeIn {
@@ -61,7 +66,6 @@ header {
   }
 }
 
-
 section {
   font-size: 2rem;
   padding: 2rem;
@@ -70,30 +74,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   z-index: 1;
 }
 
 #section-form {
-  /* background: radial-gradient(#8B4513 1px, transparent 1px),
-              radial-gradient(#8B4513 1px, #D2B48C 1px); */
-  background-position: 0 0, 25px 25px;
-  height : 50%;
-  background-size: 50px 50px;
-  background-color: white;
+  background: linear-gradient(135deg, #71e9df, #677d70);
+  height: 50%;
   padding: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: pattern.; */
 }
 
+
 #input-container {
-  /* background: radial-gradient(#A0522D 1px, transparent 1px),
-              radial-gradient(#A0522D 1px, #F5DEB3 1px); */
-  background-position: 0 0, 25px 25px;
-  background-size: 50px 50px;
-  /* background-color: rgb(151, 240, 233); */
   background: linear-gradient(135deg, #2ccabd, #73d498);
   padding: 20px;
   border-radius: 5px;
@@ -102,8 +96,6 @@ section {
   align-items: center;
   text-align: center;
 }
-
-
 
 #imageInput,
 #uploadButton {
@@ -173,4 +165,3 @@ form button:hover {
 form button:active {
   border: 0;
 }
-
